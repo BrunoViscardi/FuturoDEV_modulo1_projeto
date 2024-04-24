@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-function Login() {
+function PaginaLogin() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -54,5 +54,5 @@ function Login() {
     )
 }
 
-export default Login
+export default PaginaLogin
 
