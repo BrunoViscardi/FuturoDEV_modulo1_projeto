@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form"
+import { Link } from 'react-router-dom';
+
 
 function PaginaLogin() {
+
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -43,7 +46,7 @@ function PaginaLogin() {
 
 
                     <div>
-                        <p> É novo por aqui? Faça o cadastro </p>
+                        <p> É novo por aqui? <Link to="/cadastro-usuario">Faça seu cadastro</Link> </p>
                     </div>
 
                     
