@@ -1,18 +1,37 @@
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
+import useCEP from "../../fetchs/useCEP";
 
 
 
 function PaginaCadastroUsuario() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
     function sendCadastroUsuario(formValue) {
         console.log(formValue)
     }
 
+    async function consultaCEP(cep) {
+        try {
+            const dados = await useCEP(cep)
+            
+            setValue('rua', dados.rua);
+            setValue('cidade', dados.cidade);
+            setValue('bairro', dados.bairro);
+            setValue('estado', dados.estado);
+
+            // console.log(dados)
+        }
+        catch (error) {
+            console.error('Erro ao consultar o CEP:', error);
+        }
+    }
+
+
     return (
         <>
+            <button onClick={() => consultaCEP(79811140)}>ceee</button>
             <h1>Cadastre-se</h1>
             <p>crie uma conta para encontrar um local de atividade física próximo</p>
 
@@ -90,7 +109,7 @@ function PaginaCadastroUsuario() {
 
                 <div className="campo">
                     <label htmlFor="senha">Senha</label>
-                    <input type="text" placeholder="crie uma senha com 6 dígitos "
+                    <input type="text" placeholder="crie uma senha com 6 dígitos " 
                         {...register("senha", {
                             required: "campo obrigatório",
                             pattern: {
@@ -103,86 +122,87 @@ function PaginaCadastroUsuario() {
                 </div>
 
                 <div>
-                <div className="campo">
-                    <label htmlFor="cep">CEP</label>
-                    <input type="text" placeholder="digite seu CEP"
-                        {...register("cep", {
-                            required: "campo obrigatório",
-                            pattern: {
-                                value: /^[0-9]{8}$/,
-                                message: "CEP deve conter 8 números"
-                            }
-                        })}
-                    />
-                    {errors?.cep && <p>{errors.cep?.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="cep">CEP</label>
+                        <input type="text" placeholder="digite seu CEP"  
+                            {...register("cep", {
+                                required: "campo obrigatório",
+                                pattern: {
+                                    value: /^[0-9]{8}$/,
+                                    message: "CEP deve conter 8 números"
+                                }
+                            })}
+                            onBlur={(e)=>consultaCEP(e.target.value)}
+                        />
+                        {errors?.cep && <p>{errors.cep?.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="rua">Rua</label>
-                    <input type="text" value={"rua"} 
-                        {...register("rua", {
-                            required: "campo obrigatório",
-                            maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.rua && <p>{errors.rua.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="rua">Rua</label>
+                        <input type="text" placeholder="digite o nome da rua"
+                            {...register("rua", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.rua && <p>{errors.rua.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="numero">Número</label>
-                    <input type="text" placeholder="digite o número da residência"
-                        {...register("numero", {
-                            required: "campo obrigatório",
-                            maxLength: { value: 10, message: "Máximo de 10 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.numero && <p>{errors.numero.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="numero">Número</label>
+                        <input type="text" placeholder="digite o número da residência"
+                            {...register("numero", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 10, message: "Máximo de 10 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.numero && <p>{errors.numero.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="complemento">Complemento</label>
-                    <input type="text" placeholder="digite o complemento"
-                        {...register("complemento", {
-                            maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.complemento && <p>{errors.complemento.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="complemento">Complemento</label>
+                        <input type="text" placeholder="digite o complemento"
+                            {...register("complemento", {
+                                maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.complemento && <p>{errors.complemento.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="cidade">Cidade</label>
-                    <input type="text" defaultValue={"cidade"}
-                        {...register("cidade", {
-                            required: "campo obrigatório",
-                            maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.cidade && <p>{errors.cidade.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="cidade">Cidade</label>
+                        <input type="text" placeholder="digite o nome da cidade"
+                            {...register("cidade", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.cidade && <p>{errors.cidade.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="estado">Estado</label>
-                    <input type="text" defaultValue={"UF"}
-                        {...register("estado", {
-                            required: "campo obrigatório",
-                            maxLength: { value: 2, message: "Máximo de 2 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.estado && <p>{errors.estado.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="estado">Estado</label>
+                        <input type="text" placeholder="digite a sigla do estado"
+                            {...register("estado", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 2, message: "Máximo de 2 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.estado && <p>{errors.estado.message}</p>}
+                    </div>
 
-                <div className="campo">
-                    <label htmlFor="bairro">Bairro</label>
-                    <input type="text" defaultValue={"bairro"}
-                        {...register("bairro", {
-                            required: "campo obrigatório",
-                            maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
-                        })}
-                    />
-                    {errors?.bairro && <p>{errors.bairro.message}</p>}
-                </div>
+                    <div className="campo">
+                        <label htmlFor="bairro">Bairro</label>
+                        <input type="text" placeholder="digite o nome do bairro"
+                            {...register("bairro", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.bairro && <p>{errors.bairro.message}</p>}
+                    </div>
 
-                
+
 
                 </div>
 
