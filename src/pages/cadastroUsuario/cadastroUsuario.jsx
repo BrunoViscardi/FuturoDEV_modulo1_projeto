@@ -63,10 +63,10 @@ function PaginaCadastroUsuario() {
                 <div className="campo">
                     <label htmlFor="sexo">Sexo</label>
                     <div>
-                        <input {...register("sexo", { required: "campo obrigatório" })} type="radio" value="Homem" />
-                        <label htmlFor="Homem">Homem</label>
-                        <input {...register("sexo", { required: "campo obrigatório" })} type="radio" value=" Mulher" />
-                        <label htmlFor="Mulher">Mulher</label>
+                        <input {...register("sexo", { required: "campo obrigatório" })} type="radio" value="Masculino" />
+                        <label htmlFor="Masculino">Masculino</label>
+                        <input {...register("sexo", { required: "campo obrigatório" })} type="radio" value="Feminino" />
+                        <label htmlFor="Feminino">Feminino</label>
                         <input {...register("sexo", { required: "campo obrigatório" })} type="radio" value=" Não binário" />
                         <label htmlFor="NaoBinario">Não binário</label>
                         {errors?.sexo && <p>{errors.sexo?.message}</p>}
@@ -94,7 +94,7 @@ function PaginaCadastroUsuario() {
                             required: "campo obrigatório"
                         })}
                     />
-                    {errors?.sobrenome && <p>{errors.sobrenome?.message}</p>}
+                    {errors?.nascimento && <p>{errors.nascimento?.message}</p>}
                 </div>
 
                 <div className="campo">
