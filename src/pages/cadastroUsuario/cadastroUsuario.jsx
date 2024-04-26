@@ -23,8 +23,6 @@ function PaginaCadastroUsuario() {
             setValue('cidade', dados.cidade);
             setValue('bairro', dados.bairro);
             setValue('estado', dados.estado);
-
-            
         }
         catch (error) {
             console.error('Erro ao consultar o CEP:', error);

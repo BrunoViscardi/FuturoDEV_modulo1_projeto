@@ -1,7 +1,7 @@
 import './App.css'
 
 import PaginaLogin from './pages/login/login'
-import { CEPcontextProvider } from './context/CEPcontext'
+import { UsuarioContextProvider } from './context/UsuarioContext'
 import { Outlet } from 'react-router-dom'
 
 function App() {
@@ -9,9 +9,9 @@ function App() {
 
   return (
     <>
-    <CEPcontextProvider>
+    <UsuarioContextProvider>
       <Outlet/>
-    </CEPcontextProvider>
+    </UsuarioContextProvider>
     </>
   )
 }
