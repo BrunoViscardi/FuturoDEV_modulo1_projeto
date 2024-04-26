@@ -4,7 +4,10 @@ import useCEP from "../../fetchs/useCEP";
 
 
 
+
 function PaginaCadastroUsuario() {
+
+    
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
@@ -21,7 +24,7 @@ function PaginaCadastroUsuario() {
             setValue('bairro', dados.bairro);
             setValue('estado', dados.estado);
 
-            // console.log(dados)
+            
         }
         catch (error) {
             console.error('Erro ao consultar o CEP:', error);
