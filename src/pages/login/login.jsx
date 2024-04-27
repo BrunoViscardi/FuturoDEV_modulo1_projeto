@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext} from "react";
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
 import { UsuarioContext } from "../../context/UsuarioContext";
@@ -11,8 +11,10 @@ function PaginaLogin() {
     const [usuarioLogin, setUsuarioLogin] = useState({
         email: "",
         senha: "",
-        msgErro:undefined
+        msgErro: false
     })
+
+    
 
     
     function realizarLogin(usuarioLogin) {
@@ -21,10 +23,12 @@ function PaginaLogin() {
         console.log(usuarioLogin)
 
         usuarios.map(user=>{
+            
             if (user.email == email && user.senha == senha) {
+                localStorage.setItem("isAutenticado", true)
                 window.location.href="/dashboard"                
             } else{
-                setUsuarioLogin({ ...usuarioLogin, msgErro: 'Email ou senha inválidos' })
+                setUsuarioLogin({ ...usuarioLogin, msgErro: true })
             }
         })
         
@@ -61,7 +65,7 @@ function PaginaLogin() {
                             />
                         </div>
 
-                        {usuarioLogin?.msgErro && <p>{usuarioLogin.msgErro}</p>}
+                        {usuarioLogin.msgErro == true && <p>Usuário ou senha inválidos</p>}
 
                         <button type='button' onClick={()=>realizarLogin(usuarioLogin)}> Entrar </button>
                     </form>

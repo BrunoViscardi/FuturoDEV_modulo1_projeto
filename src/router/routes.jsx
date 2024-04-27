@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import App from "../App";
 import PaginaCadastroExercicio from "../pages/cadastroExercicio/cadastroExercicio";
@@ -8,22 +9,32 @@ import PaginaListagemExercicio from "../pages/listagemExercicio/listagemExercici
 import PaginaLogin from "../pages/login/login";
 
 
+let isAutenticado = JSON.parse(localStorage.getItem("isAutenticado")) || false
+const PrivateRoute = ({ children }) => {
+    return isAutenticado ? [children] : <Navigate to="/login" />
+}
+
+
 
 
 
 const routes = createBrowserRouter([
     {
+        path: "/login",
+        element: <PaginaLogin />
+    },
+    {
+        path: "cadastro-usuario",
+        element: <PaginaCadastroUsuario />
+    },
+    {
         path: "/",
-        element: <App />,
+        element: (
+            <PrivateRoute>
+                <App />
+            </PrivateRoute>
+        ),
         children: [
-            {
-                path: "/",
-                element: <PaginaLogin />
-            },
-            {
-                path: "cadastro-usuario",
-                element: <PaginaCadastroUsuario />
-            },
             {
                 path: "dashboard",
                 element: <PaginaDashboard />
