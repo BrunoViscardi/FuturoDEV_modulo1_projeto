@@ -1,11 +1,38 @@
+import { useState, useContext } from "react";
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
+import { UsuarioContext } from "../../context/UsuarioContext";
 
 
 function PaginaLogin() {
 
+    const {usuarios}= useContext(UsuarioContext)
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [usuarioLogin, setUsuarioLogin] = useState({
+        email: "",
+        senha: "",
+        msgErro:undefined
+    })
+
+    
+    function realizarLogin(usuarioLogin) {
+        const email=usuarioLogin.email;
+        const senha=usuarioLogin.senha;
+        console.log(usuarioLogin)
+
+        usuarios.map(user=>{
+            if (user.email == email && user.senha == senha) {
+                window.location.href="/dashboard"                
+            } else{
+                setUsuarioLogin({ ...usuarioLogin, msgErro: 'Email ou senha inválidos' })
+            }
+        })
+        
+    }
+
+    
+
+
 
     return (
         <>
@@ -22,26 +49,21 @@ function PaginaLogin() {
                         <div className="campo">
                             <label htmlFor="emailLogin">Email</label>
                             <input type="email" placeholder="digite seu email"
-                                {...register("emailLogin", {
-                                    required: "campo obrigatório",
-                                    maxLength: { value: 50, message: "Máximo de 50 caracteres permitidos" }
-                                })}
+                                onChange={(e) => setUsuarioLogin({ ...usuarioLogin, email: e.target.value })}
                             />
-                            {true && <p>{errors.emailLogin?.message}</p>}
+                            
                         </div>
 
                         <div className="campo">
                             <label htmlFor="senhaLogin">Senha</label>
                             <input type="password" placeholder="digite sua senha"
-                                {...register("senhaLogin", {
-                                    required: "campo obrigatório",
-                                    maxLength: { value: 6, message: "Máximo de 6 caracteres permitidos" }
-                                })}
+                                onChange={(e) => setUsuarioLogin({ ...usuarioLogin, senha: e.target.value })}
                             />
-                            {true && <p>{errors.senhaLogin?.message}</p>}
                         </div>
 
-                        <button> Entrar </button>
+                        {usuarioLogin?.msgErro && <p>{usuarioLogin.msgErro}</p>}
+
+                        <button type='button' onClick={()=>realizarLogin(usuarioLogin)}> Entrar </button>
                     </form>
 
 
@@ -49,7 +71,7 @@ function PaginaLogin() {
                         <p> É novo por aqui? <Link to="/cadastro-usuario">Faça seu cadastro</Link> </p>
                     </div>
 
-                    
+
 
                 </div>
             </div>

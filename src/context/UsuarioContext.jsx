@@ -46,7 +46,7 @@ export const UsuarioContextProvider = ({ children }) => {
 
 
     return (
-        <UsuarioContext.Provider value={{cadastrarUsuario}}>
+        <UsuarioContext.Provider value={{cadastrarUsuario,usuarios}}>
             {children}
         </UsuarioContext.Provider>
     )
