@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form"
-import { Link } from 'react-router-dom';
 import useCEP from "../../fetchs/useCEP";
+import { UsuarioContext } from "../../context/UsuarioContext";
+import { useContext } from "react";
 
 
 
 
 function PaginaCadastroUsuario() {
-
+    const {cadastrarUsuario}= useContext(UsuarioContext)
     
+
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
@@ -18,7 +20,7 @@ function PaginaCadastroUsuario() {
     async function consultaCEP(cep) {
         try {
             const dados = await useCEP(cep)
-            
+
             setValue('rua', dados.rua);
             setValue('cidade', dados.cidade);
             setValue('bairro', dados.bairro);
@@ -36,7 +38,7 @@ function PaginaCadastroUsuario() {
             <h1>Cadastre-se</h1>
             <p>crie uma conta para encontrar um local de atividade física próximo</p>
 
-            <form onSubmit={handleSubmit(sendCadastroUsuario)}>
+            <form onSubmit={handleSubmit(cadastrarUsuario)}>
 
                 <div className="campo">
                     <label htmlFor="nome">Nome</label>
@@ -110,7 +112,7 @@ function PaginaCadastroUsuario() {
 
                 <div className="campo">
                     <label htmlFor="senha">Senha</label>
-                    <input type="text" placeholder="crie uma senha com 6 dígitos " 
+                    <input type="text" placeholder="crie uma senha com 6 dígitos "
                         {...register("senha", {
                             required: "campo obrigatório",
                             pattern: {
@@ -125,7 +127,7 @@ function PaginaCadastroUsuario() {
                 <div>
                     <div className="campo">
                         <label htmlFor="cep">CEP</label>
-                        <input type="text" placeholder="digite seu CEP"  
+                        <input type="text" placeholder="digite seu CEP"
                             {...register("cep", {
                                 required: "campo obrigatório",
                                 pattern: {
@@ -133,7 +135,7 @@ function PaginaCadastroUsuario() {
                                     message: "CEP deve conter 8 números"
                                 }
                             })}
-                            onBlur={(e)=>consultaCEP(e.target.value)}
+                            onBlur={(e) => consultaCEP(e.target.value)}
                         />
                         {errors?.cep && <p>{errors.cep?.message}</p>}
                     </div>
