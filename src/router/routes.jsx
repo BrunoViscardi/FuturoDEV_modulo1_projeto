@@ -28,7 +28,7 @@ const routes = createBrowserRouter([
         element: <PaginaCadastroUsuario />
     },
     {
-        path: "/",
+        path: "/:idUser",
         element: (
             <PrivateRoute>
                 <App />
@@ -36,15 +36,15 @@ const routes = createBrowserRouter([
         ),
         children: [
             {
-                path: "dashboard",
+                path: "/:idUser",
                 element: <PaginaDashboard />
             },
             {
-                path: "listagem-exercicio",
+                path: "/:idUser/listagem-exercicio",
                 element: <PaginaListagemExercicio />
             },
             {
-                path: "cadastro-exercicio",
+                path: "/:idUser/cadastro-exercicio",
                 element: <PaginaCadastroExercicio />
             }
         ]

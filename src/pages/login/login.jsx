@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { UsuarioContext } from "../../context/UsuarioContext";
 
 
+
 function PaginaLogin() {
+
+    
 
     const {usuarios}= useContext(UsuarioContext)
 
@@ -22,11 +25,13 @@ function PaginaLogin() {
         const senha=usuarioLogin.senha;
         console.log(usuarioLogin)
 
+        debugger
         usuarios.map(user=>{
             
             if (user.email == email && user.senha == senha) {
                 localStorage.setItem("isAutenticado", true)
-                window.location.href="/dashboard"                
+                window.location.href="/"+user.id
+                            
             } else{
                 setUsuarioLogin({ ...usuarioLogin, msgErro: true })
             }

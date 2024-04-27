@@ -2,9 +2,12 @@ import { useForm } from "react-hook-form"
 import useCEP from "../../fetchs/useCEP";
 import { useContext } from "react";
 import { ExercicioContext } from "../../context/ExercicioContext";
+import { useParams } from "react-router-dom";
 
 
 function PaginaCadastroExercicio(){
+
+    const {idUser} = useParams()
 
     const {cadastrarExercicio}= useContext(ExercicioContext)
 
@@ -18,6 +21,7 @@ function PaginaCadastroExercicio(){
             setValue('cidade', dados.cidade);
             setValue('bairro', dados.bairro);
             setValue('estado', dados.estado);
+            setValue('idUsuario', idUser) //salva o id do usuario no banco de dados dos locais, relacionando a pessoa com o local
         }
         catch (error) {
             console.error('Erro ao consultar o CEP:', error);
@@ -41,6 +45,8 @@ function PaginaCadastroExercicio(){
             <p>Cadastre um local de prática esportiva e ajude as pessoas</p>
 
             <form onSubmit={handleSubmit(cadastrarExercicio)}>
+
+
 
                 <div className="campo">
                     <label htmlFor="nome">Nome</label>
