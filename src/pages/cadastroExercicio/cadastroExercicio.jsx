@@ -1,9 +1,12 @@
 import { useForm } from "react-hook-form"
 import useCEP from "../../fetchs/useCEP";
 import { useContext } from "react";
+import { ExercicioContext } from "../../context/ExercicioContext";
 
 
 function PaginaCadastroExercicio(){
+
+    const {cadastrarExercicio}= useContext(ExercicioContext)
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
@@ -34,17 +37,17 @@ function PaginaCadastroExercicio(){
         <h1>PaginaCadastroExercicio</h1>
 
 
-        <h1>Cadastre-se</h1>
-            <p>crie uma conta para encontrar um local de atividade física próximo</p>
+        <h1>Cadastrar local de prática esportiva</h1>
+            <p>Cadastre um local de prática esportiva e ajude as pessoas</p>
 
-            <form onSubmit={handleSubmit(sendCadastro)}>
+            <form onSubmit={handleSubmit(cadastrarExercicio)}>
 
                 <div className="campo">
                     <label htmlFor="nome">Nome</label>
                     <input type="text" placeholder="digite o nome do local"
                         {...register("nome", {
                             required: "campo obrigatório",
-                            maxLength: { value: 30, message: "Máximo de 30 caracteres permitidos" }
+                            maxLength: { value: 60, message: "Máximo de 30 caracteres permitidos" }
                         })}
                     />
                     {errors?.nome && <p>{errors.nome?.message}</p>}
@@ -55,7 +58,7 @@ function PaginaCadastroExercicio(){
                     <input type="text" placeholder="qual a principal prática esportiva do local"
                         {...register("tipo", {
                             required: "campo obrigatório",
-                            maxLength: { value: 15, message: "Máximo de 15 caracteres permitidos" }
+                            maxLength: { value: 30, message: "Máximo de 15 caracteres permitidos" }
                         })}
                     />
                     {errors?.tipo && <p>{errors.tipo?.message}</p>}
@@ -121,6 +124,18 @@ function PaginaCadastroExercicio(){
                             })}
                         />
                         {errors?.longitude && <p>{errors.longitude.message}</p>}
+                    </div>
+
+
+                    <div className="campo">
+                        <label htmlFor="cidade">Cidade</label>
+                        <input type="text" placeholder="digite o nome da cidade"
+                            {...register("cidade", {
+                                required: "campo obrigatório",
+                                maxLength: { value: 40, message: "Máximo de 40 caracteres permitidos" }
+                            })}
+                        />
+                        {errors?.cidade && <p>{errors.cidade.message}</p>}
                     </div>
 
 
