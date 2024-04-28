@@ -7,8 +7,8 @@ import { useContext } from "react";
 
 
 function PaginaCadastroUsuario() {
-    const {cadastrarUsuario}= useContext(UsuarioContext)
-    
+    const { cadastrarUsuario, usuarios } = useContext(UsuarioContext)
+
 
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
@@ -30,6 +30,10 @@ function PaginaCadastroUsuario() {
             console.error('Erro ao consultar o CEP:', error);
         }
     }
+
+
+
+
 
 
     return (
@@ -83,6 +87,13 @@ function PaginaCadastroUsuario() {
                             pattern: {
                                 value: /^[0-9]{11}$/,
                                 message: "CPF deve conter 11 números"
+                            },
+                            validate: (fieldValue) => {
+                                console.log(usuarios)
+                                !usuarios.some(user => {
+                                    console.log(fieldValue, user.cpf)
+                                    fieldValue == user.cpf
+                                }) || "CPF já cadastrado"
                             }
                         })}
                     />
