@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    color: var(--nemTaoPreto);
+    font-family: inter;
+} */
+
+/* :root{
+    --nemTaoPreto:#0D1A26;
+    --cinzaEscuro:#5C6670;
+    --cinzaMedio:#AEB3B7;
+    --cinzaClaro:#EFF0F0;
+    --verdeEscuro:#504908;
+    --verdeClaro:#D6E2D3;
+    --vermelhoErro:#DA4E4E;
+} */
+
+a:link {
+    color: inherit; /* Mantém a cor padrão do texto */
+    text-decoration: none; /* retira sublinhado dos links */
+  }
+  
+  a:visited {
+    color: inherit; /* Mantém a cor padrão do texto */
+  }
