@@ -34,8 +34,8 @@ function Header() {
         <nav className="NavBar">
             <div>
                 <Link to={`/${idUser}`}>Nome do projeto</Link>
-                <Link to={`/${idUser}/listagem-exercicio`}>Cadastrar locais</Link>
-                <Link to={`/${idUser}/cadastro-exercicio`}>Editar locais</Link>
+                <Link to={`/${idUser}/cadastro-exercicio`}>Cadastrar locais</Link>
+                <Link to={`/${idUser}/listagem-exercicio`}>Editar locais</Link>
             </div>
 
             <div>
