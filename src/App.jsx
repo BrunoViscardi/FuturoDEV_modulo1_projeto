@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Header>
-        <Outlet />
-      </Header>
+      <Header />
+      <Outlet />
+
     </>
   )
 }
