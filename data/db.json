@@ -84,129 +84,14 @@
       "cidade": "Fortaleza",
       "estado": "CE",
       "bairro": "Floresta"
-    },
-    {
-      "id": "6",
-      "nome": "Bruno",
-      "sobrenome": "Ana",
-      "sexo": "Feminino",
-      "cpf": "03961074194",
-      "nascimento": "0555-02-12",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "320"
-    },
-    {
-      "id": "7",
-      "nome": "Bruno",
-      "sobrenome": "Ana",
-      "sexo": "Feminino",
-      "cpf": "03961074194",
-      "nascimento": "0555-02-12",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Pantanal"
-    },
-    {
-      "id": "0434",
-      "nome": "Bruno",
-      "sobrenome": "Ana",
-      "sexo": "Feminino",
-      "cpf": "03961074194",
-      "nascimento": "1996-10-04",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Pantanal"
-    },
-    {
-      "id": "a468",
-      "nome": "Bruno",
-      "sobrenome": "Ana",
-      "sexo": " Não binário",
-      "cpf": "03961074194",
-      "nascimento": "0222-05-04",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Pantanal"
-    },
-    {
-      "id": "2d42",
-      "nome": "Bruno 03",
-      "sobrenome": "Ana",
-      "sexo": "Masculino",
-      "cpf": "03961074144",
-      "nascimento": "0002-05-01",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Pantanal"
-    },
-    {
-      "id": "3c7d",
-      "nome": "Bruno llll",
-      "sobrenome": "Ana",
-      "sexo": "Feminino",
-      "cpf": "03961074194",
-      "nascimento": "0525-02-25",
-      "email": "bruno.viscardi33@gmail.com",
-      "senha": "12345L",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "numero": "320",
-      "complemento": "01",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Pantanal"
     }
+    
+    
+
   ],
   "locais": [
     {
-      "id": "1"
-    },
-    {
-      "id": "c77e",
-      "nome": "acad",
-      "tipo": "musculação",
-      "descricao": "dedefefe",
-      "cep": "88040300",
-      "rua": "Rua João Câncio dos Santos",
-      "latitude": "frfrfr",
-      "longitude": "frfrfr",
-      "estado": "SC",
-      "bairro": "Pantanal",
-      "cidade": "Florianópolis"
-    },
-    {
-      "id": "9f5c",
+      "id": "10",
       "nome": "Av. Beira Mar Norte",
       "tipo": "Corrida/ caminhada",
       "descricao": "Na Beira Mar Norte, atividades como corrida, caminhada e vôlei de praia se fundem com um belo pôr do sol.",
@@ -216,10 +101,11 @@
       "longitude": "-48.546707",
       "estado": "SC",
       "bairro": "Agronômica",
-      "cidade": "Florianópolis"
+      "cidade": "Florianópolis",
+      "idUsuario": "2"
     },
     {
-      "id": "7616",
+      "id": "11",
       "nome": "Parque Municipal do Córrego Grande",
       "tipo": "Vôlei de areia/ caminhada",
       "descricao": "Área natural pitoresca com flora e fauna diversificadas, dois lagos, trilha e playgrounds.",
@@ -229,10 +115,11 @@
       "longitude": "-48.511566",
       "estado": "SC",
       "bairro": "Córrego Grande",
-      "cidade": "Florianópolis"
+      "cidade": "Florianópolis",
+      "idUsuario": "3"
     },
     {
-      "id": "4f0b",
+      "id": "12",
       "nome": "Trinda Time's",
       "tipo": "skateboarding",
       "descricao": "A pista de skate é um terreno de manobras radicais, com rampas, corrimãos e obstáculos desafiadores para skatistas experientes e iniciantes.",
@@ -242,10 +129,11 @@
       "longitude": "-48.516684",
       "estado": "SC",
       "bairro": "Santa Mônica",
-      "cidade": "Florianópolis"
+      "cidade": "Florianópolis",
+      "idUsuario": "4"
     },
     {
-      "id": "fefa",
+      "id": "13",
       "nome": "Trilha Morro do Rapa",
       "tipo": "Trekking",
       "descricao": "A trilha serpenteia por entre a exuberante natureza, com árvores altas e vistas panorâmicas deslumbrantes.",
@@ -255,21 +143,8 @@
       "longitude": "-48.420233",
       "cidade": "Florianópolis",
       "estado": "SC",
-      "bairro": "Ponta das Canas"
-    },
-    {
-      "id": "67ea",
-      "nome": "Bruno V S Ana",
-      "tipo": "vfgr",
-      "descricao": "grgrgr",
-      "cep": "88040000",
-      "rua": "Rua Deputado Antônio Edu Vieira",
-      "latitude": "-27.583959",
-      "longitude": "-48.516684",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "bairro": "Saco dos Limões",
-      "idUsuario": "3c7d"
+      "bairro": "Ponta das Canas",
+      "idUsuario": "1"
     }
   ]
 }
