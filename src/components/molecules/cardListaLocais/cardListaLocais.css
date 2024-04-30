@@ -1,0 +1,51 @@
+.card-Conteudo {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    width: 485.4px;
+    height: 300px;
+}
+
+
+.CardArea {
+    padding: 32px;
+    gap: 24px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.titulo{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.divider{
+    width: 40px;
+    border-top: solid 1px var(--cinzaMedio);
+}
+
+.tipo{
+    font-weight: 700;
+    font-size: 16px;
+    text-align: right;
+}
+
+.descricao{
+    font-weight: 700;
+    font-size: 12px;
+
+}
+
+.features{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    gap: 8px;
+}
+
+.features span{
+    color: gray;
+}
+
