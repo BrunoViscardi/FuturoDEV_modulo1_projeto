@@ -2,13 +2,15 @@ import { useForm } from "react-hook-form"
 import useCEP from "../../fetchs/useCEP";
 import { useContext } from "react";
 import { ExercicioContext } from "../../context/ExercicioContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+
 
 
 function PaginaEditarExercicio() {
 
     const { idUser, idSpot } = useParams()
+    const navigate = useNavigate();
 
     const { editarExercicio } = useContext(ExercicioContext)
 
@@ -57,6 +59,9 @@ function PaginaEditarExercicio() {
     useEffect(() => {
         preencherCampos(idSpot)
     }, [])
+
+
+    
 
 
 
@@ -202,6 +207,7 @@ function PaginaEditarExercicio() {
 
 
                 <button type="submit">Editar</button>
+                <button type="button" onClick={()=>navigate(-1)}>Voltar</button>
             </form>
         </>
     )

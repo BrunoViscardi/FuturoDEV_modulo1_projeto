@@ -2,16 +2,17 @@ import { useForm } from "react-hook-form"
 import useCEP from "../../fetchs/useCEP";
 import { useContext } from "react";
 import { ExercicioContext } from "../../context/ExercicioContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 
-function PaginaCadastroExercicio(){
+function PaginaCadastroExercicio() {
 
-    const {idUser} = useParams()
-
-    const {cadastrarExercicio}= useContext(ExercicioContext)
-
+    const { idUser } = useParams()
+    const navigate = useNavigate();
+    const { cadastrarExercicio } = useContext(ExercicioContext)
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+
+
 
     async function consultaCEP(cep) {
         try {
@@ -29,19 +30,13 @@ function PaginaCadastroExercicio(){
     }
 
 
-    function sendCadastro(formValue) {
-        console.log(formValue)
-    }
 
-
-
-
-    return(
+    return (
         <>
-        <h1>PaginaCadastroExercicio</h1>
+            <h1>PaginaCadastroExercicio</h1>
 
 
-        <h1>Cadastrar local de prática esportiva</h1>
+            <h1>Cadastrar local de prática esportiva</h1>
             <p>Cadastre um local de prática esportiva e ajude as pessoas</p>
 
             <form onSubmit={handleSubmit(cadastrarExercicio)}>
@@ -176,6 +171,7 @@ function PaginaCadastroExercicio(){
 
 
                 <button type="submit">Cadastrar</button>
+                <button type="button" onClick={() => navigate(-1)}>Voltar</button>
             </form>
         </>
     )

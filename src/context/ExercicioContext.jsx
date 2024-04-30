@@ -58,19 +58,21 @@ export const ExercicioContextProvider = ({ children }) => {
   }
 
   function editarExercicio(Exercicio, id) {
-    fetch("http://localhost:3000/locais/" + id, {
-      method: "PUT", // editar
-      body: JSON.stringify(Exercicio),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(() => {
-        console.log(id)
-        alert("Local de exercício alterado com sucesso")
-        lerExercicios()
+    if (confirm("Deseja realmente alterar esse local?") == true) {
+      fetch("http://localhost:3000/locais/" + id, {
+        method: "PUT", // editar
+        body: JSON.stringify(Exercicio),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
-      .catch(() => alert("Erro ao editar local de exercício"))
+        .then(() => {
+          console.log(id)
+          alert("Local de exercício alterado com sucesso")
+          lerExercicios()
+        })
+        .catch(() => alert("Erro ao editar local de exercício"))
+    }
   }
 
 

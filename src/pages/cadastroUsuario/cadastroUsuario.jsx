@@ -7,15 +7,11 @@ import { useContext } from "react";
 
 
 function PaginaCadastroUsuario() {
-    const {cadastrarUsuario}= useContext(UsuarioContext)
     
-
-
+    const { cadastrarUsuario } = useContext(UsuarioContext)
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
-    function sendCadastroUsuario(formValue) {
-        console.log(formValue)
-    }
+
 
     async function consultaCEP(cep) {
         try {
@@ -34,7 +30,7 @@ function PaginaCadastroUsuario() {
 
     return (
         <>
-            <button onClick={() => consultaCEP(79811140)}>ceee</button>
+
             <h1>Cadastre-se</h1>
             <p>crie uma conta para encontrar um local de atividade física próximo</p>
 
@@ -213,6 +209,7 @@ function PaginaCadastroUsuario() {
 
 
                 <button type="submit">Cadastrar</button>
+                <button type="button" onClick={() => window.location.href = "/login"}>Voltar</button>
             </form>
 
 
