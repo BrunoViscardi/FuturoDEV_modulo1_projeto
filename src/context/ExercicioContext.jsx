@@ -33,7 +33,7 @@ export const ExercicioContextProvider = ({ children }) => {
       },
     })
       .then(() => {
-        alert("Local de exercício cadastrado")
+        alert("Local de exercício cadastrado com sucesso")
         lerExercicios()
       })
       .catch(() => alert("Erro ao cadastrar local de exercício"))
@@ -54,22 +54,31 @@ export const ExercicioContextProvider = ({ children }) => {
           lerExercicios()
         })
         .catch(() => alert("Erro ao deletar local de exercício"))
-    } else {
-      return
     }
+  }
 
-
-
+  function editarExercicio(Exercicio, id) {
+    fetch("http://localhost:3000/locais/" + id, {
+      method: "PUT", // editar
+      body: JSON.stringify(Exercicio),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(() => {
+        console.log(id)
+        alert("Local de exercício alterado com sucesso")
+        lerExercicios()
+      })
+      .catch(() => alert("Erro ao editar local de exercício"))
   }
 
 
 
 
 
-
-
   return (
-    <ExercicioContext.Provider value={{ cadastrarExercicio, deletarExercicio, Exercicios }}>
+    <ExercicioContext.Provider value={{ cadastrarExercicio, deletarExercicio, editarExercicio, Exercicios }}>
       {children}
     </ExercicioContext.Provider>
   )

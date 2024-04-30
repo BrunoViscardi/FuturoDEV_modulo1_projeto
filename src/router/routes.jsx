@@ -7,6 +7,7 @@ import PaginaCadastroUsuario from "../pages/cadastroUsuario/cadastroUsuario";
 import PaginaDashboard from "../pages/dashboard/dashboard";
 import PaginaListagemExercicio from "../pages/listagemExercicio/listagemExercicio";
 import PaginaLogin from "../pages/login/login";
+import PaginaEditarExercicio from "../pages/editarExercicio/editarExercio";
 
 
 let isAutenticado = JSON.parse(localStorage.getItem("isAutenticado")) || false
@@ -46,6 +47,10 @@ const routes = createBrowserRouter([
             {
                 path: "/:idUser/cadastro-exercicio",
                 element: <PaginaCadastroExercicio />
+            },
+            {
+                path: "/:idUser/editar-exercicio/:idSpot",
+                element: <PaginaEditarExercicio />
             }
         ]
     }
