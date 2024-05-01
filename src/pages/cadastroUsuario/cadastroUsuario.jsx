@@ -28,6 +28,10 @@ function PaginaCadastroUsuario() {
     }
 
 
+
+
+
+
     return (
         <>
 
@@ -79,6 +83,16 @@ function PaginaCadastroUsuario() {
                             pattern: {
                                 value: /^[0-9]{11}$/,
                                 message: "CPF deve conter 11 números"
+                            },
+                            validate: (fieldValue) => {
+                                console.log(usuarios)
+                                return (
+                                    !usuarios.some(user => {
+                                        console.log(fieldValue, user.cpf)
+                                        return fieldValue == user.cpf
+                                    }) || "CPF já cadastrado"
+                                )
+
                             }
                         })}
                     />
