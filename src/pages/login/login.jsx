@@ -1,7 +1,7 @@
 import { useState, useContext} from "react";
-import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
 import { UsuarioContext } from "../../context/UsuarioContext";
+import { AtivosContext } from "../../context/AtivosContext";
 
 
 
@@ -10,6 +10,9 @@ function PaginaLogin() {
     
 
     const {usuarios}= useContext(UsuarioContext)
+    const {cadastrarUsuarioAtivo}=useContext(AtivosContext)
+
+
 
     const [usuarioLogin, setUsuarioLogin] = useState({
         email: "",
@@ -23,14 +26,17 @@ function PaginaLogin() {
     function realizarLogin(usuarioLogin) {
         const email=usuarioLogin.email;
         const senha=usuarioLogin.senha;
-        console.log(usuarioLogin)
+        
 
-        debugger
+        
         usuarios.map(user=>{
             
             if (user.email == email && user.senha == senha) {
                 localStorage.setItem("isAutenticado", true)
-                window.location.href="/"+user.id
+                window.location.href="/"+user.id           
+
+                cadastrarUsuarioAtivo({idUser: user.id, nome: user.nome})
+
                             
             } else{
                 setUsuarioLogin({ ...usuarioLogin, msgErro: true })
