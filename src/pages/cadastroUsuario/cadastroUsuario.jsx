@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 function PaginaCadastroUsuario() {
     
-    const { cadastrarUsuario } = useContext(UsuarioContext)
+    const { cadastrarUsuario, usuarios } = useContext(UsuarioContext)
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
 
