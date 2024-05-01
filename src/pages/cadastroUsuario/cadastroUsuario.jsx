@@ -90,10 +90,13 @@ function PaginaCadastroUsuario() {
                             },
                             validate: (fieldValue) => {
                                 console.log(usuarios)
-                                !usuarios.some(user => {
-                                    console.log(fieldValue, user.cpf)
-                                    fieldValue == user.cpf
-                                }) || "CPF já cadastrado"
+                                return (
+                                    !usuarios.some(user => {
+                                        console.log(fieldValue, user.cpf)
+                                        return fieldValue == user.cpf
+                                    }) || "CPF já cadastrado"
+                                )
+
                             }
                         })}
                     />
