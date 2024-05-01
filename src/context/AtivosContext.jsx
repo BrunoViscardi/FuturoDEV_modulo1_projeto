@@ -62,13 +62,30 @@ export const AtivosContextProvider = ({ children }) => {
     }
 
 
+    async function Sair(idUser) {
+
+        const IDusuarioLogado = usuariosAtivos.find(pessoa => pessoa.idUser == idUser).id
+        await deletarUsuarioAtivo(IDusuarioLogado)
+
+        if (localStorage.getItem("isAutenticado")) {
+            localStorage.removeItem("isAutenticado")
+        }
+
+        window.location.href = "/login"
+
+    }
+
+
+    
+
+
 
 
 
 
 
     return (
-        <AtivosContext.Provider value={{ usuariosAtivos, setUsuariosAtivos, cadastrarUsuarioAtivo, deletarUsuarioAtivo }}>
+        <AtivosContext.Provider value={{ usuariosAtivos, setUsuariosAtivos, cadastrarUsuarioAtivo, deletarUsuarioAtivo, Sair }}>
             {children}
         </AtivosContext.Provider>
     )

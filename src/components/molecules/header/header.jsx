@@ -9,7 +9,7 @@ import { AtivosContext } from "../../../context/AtivosContext";
 
 function Header() {
     const { idUser } = useParams()
-    const { deletarUsuarioAtivo, usuariosAtivos } = useContext(AtivosContext)
+    const { Sair } = useContext(AtivosContext)
     const { usuarios } = useContext(UsuarioContext)
 
 
@@ -22,20 +22,19 @@ function Header() {
 
 
 
+   
+
+
+
     const [nome, setNome] = useState({
         nome: ""
     })
 
 
-    function Sair(idUser) {
+    
 
-        window.location.href="/login"
-        localStorage.removeItem("isAutenticado");
 
-        const IDusuarioLogado = usuariosAtivos.find(pessoa => pessoa.idUser == idUser).id
-        deletarUsuarioAtivo(IDusuarioLogado)        
-    }
-
+   
 
 
 
