@@ -1,34 +1,44 @@
 import "./header.css"
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { Link, useParams } from 'react-router-dom';
 import { UsuarioContext } from "../../../context/UsuarioContext";
 import { useEffect } from "react";
+import { AtivosContext } from "../../../context/AtivosContext";
 
 
 
 function Header() {
-    const {idUser} = useParams()
-    const {usuarios}= useContext(UsuarioContext)
+    const { idUser } = useParams()
+    const { deletarUsuarioAtivo, usuariosAtivos } = useContext(AtivosContext)
+    const { usuarios } = useContext(UsuarioContext)
 
 
     useEffect(() => {
-        const usuarioLogado = usuarios.find(pessoa=> pessoa.id == idUser)
+        const usuarioLogado = usuarios.find(pessoa => pessoa.id == idUser)
         if (usuarioLogado) {
-            setNome({ nome: usuarioLogado.nome})
-            console.log(usuarioLogado.nome)
-            console.log(idUser)
-        }        
+            setNome({ nome: usuarioLogado.nome })
+        }
     }, [idUser, usuarios])
 
-    
+
 
     const [nome, setNome] = useState({
         nome: ""
     })
 
-    
 
-    
+    function Sair(idUser) {
+
+        window.location.href="/login"
+        localStorage.removeItem("isAutenticado");
+
+        const IDusuarioLogado = usuariosAtivos.find(pessoa => pessoa.idUser == idUser).id
+        deletarUsuarioAtivo(IDusuarioLogado)        
+    }
+
+
+
+
 
     return (
         <nav className="NavBar">
@@ -40,7 +50,8 @@ function Header() {
 
             <div>
                 <p>Olá, {nome.nome}</p>
-                <Link to="/login">Sair</Link>
+                <p onClick={()=>Sair(idUser)}>Sair</p>
+
             </div>
         </nav>
     )
