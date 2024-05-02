@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UsuarioContext } from "../../context/UsuarioContext";
 import { AtivosContext } from "../../context/AtivosContext";
 import "./login.css"
+import Cbutton from "../../components/atoms/button/Cbutton";
 
 
 
@@ -67,9 +68,7 @@ function PaginaLogin() {
                     <div className="containerAcesso">
                         <div className="conteudoAcesso">
 
-                            <span>
-                            <div className="logoLogin"></div>
-                            </span>
+
 
 
                             <p>!Bem-vindo de volta</p>
@@ -93,13 +92,26 @@ function PaginaLogin() {
 
                                 {usuarioLogin.msgErro == true && <div className="erroLogin">Usuário ou senha inválidos</div>}
 
-                                <button type='button' onClick={() => realizarLogin(usuarioLogin)}> Entrar </button>
+
+                                <Cbutton type='button' estilo="Contained" onClick={() => realizarLogin(usuarioLogin)}> Entrar</Cbutton>
+
+                                
                             </form>
 
+                            <div className="hr-container">
+                                <hr className="hr-left" />
+                                <span className="hr-text">ou</span>
+                                <hr className="hr-right" />
+                            </div>
+
+                            <Link to="/cadastro-usuario">
+                            <Cbutton type='button' estilo="OutlinedLogin" onClick={() => realizarLogin(usuarioLogin)}> Cadastrar-se</Cbutton>
+                            </Link>
 
 
-                            <p> É novo por aqui? <Link to="/cadastro-usuario" style={{ color: "#FFF7CD", textShadow: "1px 1px 2px gray" }}>Faça seu cadastro</Link></p>
-                            
+
+
+
 
 
                         </div>

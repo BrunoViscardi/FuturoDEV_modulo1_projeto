@@ -1,36 +1,39 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    color: var(--cinza);
-    font-family: "Inter", sans-serif;
+body {
+  color: var(--cinzaEscuro);
+  font-family: "Inter", sans-serif;
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap');
 
-
-:root{
-    --azul:#D4E5F5;
-    --amarelo: #FFF7CD;
-    --cinza: #5A5766;
-    --magenta:#912F56;
+:root {
+  --claro: #FAE9CD;
+  --escuro: #443A2E;
+  --medio: #633A21;
+  --cinzaClaro: #BFC3BD;
+  --cinzaMedio: #92948C;
+  --cinzaEscuro: #3D403B;
 }
 
 a:link {
-    color: inherit; /* Mantém a cor padrão do texto */
-    text-decoration: none; /* retira sublinhado dos links */
-  }
-  
-  a:visited {
-    color: inherit; /* Mantém a cor padrão do texto */
-  }
+  color: inherit;
+  /* Mantém a cor padrão do texto */
+  text-decoration: none;
+  /* retira sublinhado dos links */
+}
 
-  h1{
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 3em;
-    font-weight: 900;
-  }
+a:visited {
+  color: inherit;
+  /* Mantém a cor padrão do texto */
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5em;
+  font-weight: 900;
+}

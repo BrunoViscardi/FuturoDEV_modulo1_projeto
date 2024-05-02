@@ -9,7 +9,7 @@
 }
 
 .conteudoLogin {
-    /* border: 1.5px solid var(--azul); */
+    /* border: 1.5px solid var(--medio); */
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     width: calc((100vh - 2*40px) * 1.7778);
@@ -23,33 +23,34 @@
     flex: 1;
 }
 
-.nomeProjeto{
+.nomeProjeto {
     margin: 5em;
     display: flex;
     flex-direction: column;
     direction: rtl;
 }
+
 .nomeProjeto h1 {
-    color: var(--azul);
+    color: var(--medio);
+    width: fit-content;
+
+    background-image: url(../../assets/laurelAmarelo.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
 .nomeProjeto p {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 600;
-    color: var(--azul);
-}
-.logoLogin{
-    width: 80px;
-    height: 80px;
-    background-image: url(../../assets/laurelAmarelo.svg);
-    background-position: center;
-    background-size:contain;
-    background-repeat: no-repeat;
-    
+    font-size: 2.22em;
 }
 
+
+
 .containerAcesso {
-    background-color: var(--azul);
-    /* background-color: rgba(0, 0, 0, 0.6); */
+    /* background-color: var(--medio); */
+    background-color: rgba(68, 58, 46, 0.6);
     border-radius: 0 20px 20px 0;
     width: 25em;
     padding: 2em;
@@ -59,22 +60,40 @@
     justify-content: center;
 }
 
-.conteudoAcesso{
+.conteudoAcesso {
     display: flex;
     flex-direction: column;
     direction: ltr;
 }
 
-.conteudoAcesso span{
-    display: flex;
-    justify-content: center;
-}
 
-
-.conteudoAcesso p{
+.conteudoAcesso p {
     direction: rtl;
     font-weight: 900;
     margin: 20px 0;
+    color: var(--cinzaClaro);
+}
+
+
+
+.hr-container {
+    
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.hr-left,
+.hr-right {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--cinzaClaro);
+    /* Cor do traço do HR */
+}
+
+.hr-text {
+    padding: 0 10px;
+    color: var(--cinzaClaro);
 }
 
 
@@ -84,7 +103,7 @@
 
 
 
-form{
+form {
     font-size: 16px;
     gap: 20px;
     font-weight: 400;
@@ -92,11 +111,12 @@ form{
     flex-direction: column;
 }
 
-input, select{
-    background-color: var(--amarelo);
+input,
+select {
+    background-color: transparent;
     height: 40px;
     width: auto;
-    border: 1px solid var(--azul);
+    border: 1px solid var(--cinzaClaro);
     border-radius: 4px;
     padding: 0 16px;
     font-size: 16px;
@@ -109,6 +129,7 @@ input:-webkit-autofill {
     color: inherit;
     transition: background-color 5000s ease-in-out 0s;
 }
+
 select:-webkit-autofill {
     background-color: transparent;
     color: inherit;
@@ -116,12 +137,15 @@ select:-webkit-autofill {
 }
 
 input::placeholder {
-    color: #808080;
-  }
+    color: var(--cinzaClaro);
+}
 
 
 
-.campoLogin{
+
+
+.campoLogin {
+    color: var(--cinzaClaro);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -130,13 +154,16 @@ input::placeholder {
 
 
 .erroLogin {
-    color: var(--magenta);
+    color: var(--claro);
     font-size: 10.667px;
     padding-left: 16px;
 }
 
-.erroLogin::before{
+.erroLogin::before {
     content: "* ";
 }
 
 
+.conteudoAcesso a button{
+    width: 100%;
+}
