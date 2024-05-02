@@ -22,7 +22,7 @@ function Header() {
 
 
 
-   
+
 
 
 
@@ -31,10 +31,10 @@ function Header() {
     })
 
 
-    
 
 
-   
+
+
 
 
 
@@ -42,15 +42,17 @@ function Header() {
     return (
         <nav className="NavBar">
             <div>
-                <Link to={`/${idUser}`}>Nome do projeto</Link>
+                <div className="LogoHeader"></div>
+                
+
+                <Link to={`/${idUser}`}>HOME</Link>
                 <Link to={`/${idUser}/cadastro-exercicio`}>Cadastrar locais</Link>
                 <Link to={`/${idUser}/listagem-exercicio`}>Editar locais</Link>
             </div>
 
             <div>
-                <p>Olá, {nome.nome}</p>
-                <p onClick={()=>Sair(idUser)}>Sair</p>
-
+                <span>Olá, {nome.nome}</span>
+                <p onClick={() => Sair(idUser)}>Sair</p>
             </div>
         </nav>
     )
