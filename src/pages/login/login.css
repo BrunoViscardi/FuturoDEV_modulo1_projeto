@@ -9,18 +9,42 @@
 }
 
 .conteudoLogin {
-    border: 1.5px solid var(--azul);
+    /* border: 1.5px solid var(--azul); */
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     width: calc((100vh - 2*40px) * 1.7778);
     height: calc(100vh - 2*40px);
     display: flex;
-
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 }
 
 
 .containerRetangulo {
     flex: 1;
+}
+
+.nomeProjeto{
+    margin: 5em;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+.nomeProjeto h1 {
+    color: var(--azul);
+}
+.nomeProjeto p {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    color: var(--azul);
+}
+.logoLogin{
+    width: 80px;
+    height: 80px;
+    background-image: url(../../assets/laurelAmarelo.svg);
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    
 }
 
 .containerAcesso {
@@ -34,3 +58,85 @@
     align-items: center;
     justify-content: center;
 }
+
+.conteudoAcesso{
+    display: flex;
+    flex-direction: column;
+    direction: ltr;
+}
+
+.conteudoAcesso span{
+    display: flex;
+    justify-content: center;
+}
+
+
+.conteudoAcesso p{
+    direction: rtl;
+    font-weight: 900;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+form{
+    font-size: 16px;
+    gap: 20px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select{
+    background-color: var(--amarelo);
+    height: 40px;
+    width: auto;
+    border: 1px solid var(--azul);
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+
+/* para que o navegador não altere a cor do fundo ao autopreencher */
+input:-webkit-autofill {
+    background-color: transparent;
+    color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+}
+select:-webkit-autofill {
+    background-color: transparent;
+    color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder {
+    color: #808080;
+  }
+
+
+
+.campoLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+
+.erroLogin {
+    color: var(--magenta);
+    font-size: 10.667px;
+    padding-left: 16px;
+}
+
+.erroLogin::before{
+    content: "* ";
+}
+
+
