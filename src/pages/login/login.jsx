@@ -1,16 +1,17 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import { UsuarioContext } from "../../context/UsuarioContext";
 import { AtivosContext } from "../../context/AtivosContext";
+import "./login.css"
 
 
 
 function PaginaLogin() {
 
-    
 
-    const {usuarios}= useContext(UsuarioContext)
-    const {cadastrarUsuarioAtivo}=useContext(AtivosContext)
+
+    const { usuarios } = useContext(UsuarioContext)
+    const { cadastrarUsuarioAtivo } = useContext(AtivosContext)
 
 
 
@@ -20,74 +21,78 @@ function PaginaLogin() {
         msgErro: false
     })
 
-    
 
-    
+
+
     function realizarLogin(usuarioLogin) {
-        const email=usuarioLogin.email;
-        const senha=usuarioLogin.senha;
-        
+        const email = usuarioLogin.email;
+        const senha = usuarioLogin.senha;
 
-        
-        usuarios.map(user=>{
-            
+
+
+        usuarios.map(user => {
+
             if (user.email == email && user.senha == senha) {
                 localStorage.setItem("isAutenticado", true)
-                window.location.href="/"+user.id           
+                window.location.href = "/" + user.id
 
-                cadastrarUsuarioAtivo({idUser: user.id, nome: user.nome})
+                cadastrarUsuarioAtivo({ idUser: user.id, nome: user.nome })
 
-                            
-            } else{
+
+            } else {
                 setUsuarioLogin({ ...usuarioLogin, msgErro: true })
             }
         })
-        
+
     }
 
-    
+
 
 
 
     return (
         <>
-            <div>
-                <div>
+            <div className="containerLogin">
 
-                </div>
-                <div>
-                    <h1>nome do projeto</h1>
-                    <p>Bem-vindo de volta</p>
+                <div className="conteudoLogin">
 
+                    <div className="containerRetangulo">
 
-                    <form>
-                        <div className="campo">
-                            <label htmlFor="emailLogin">Email</label>
-                            <input type="email" placeholder="digite seu email"
-                                onChange={(e) => setUsuarioLogin({ ...usuarioLogin, email: e.target.value })}
-                            />
-                            
-                        </div>
-
-                        <div className="campo">
-                            <label htmlFor="senhaLogin">Senha</label>
-                            <input type="password" placeholder="digite sua senha"
-                                onChange={(e) => setUsuarioLogin({ ...usuarioLogin, senha: e.target.value })}
-                            />
-                        </div>
-
-                        {usuarioLogin.msgErro == true && <p>Usuário ou senha inválidos</p>}
-
-                        <button type='button' onClick={()=>realizarLogin(usuarioLogin)}> Entrar </button>
-                    </form>
-
-
-                    <div>
-                        <p> É novo por aqui? <Link to="/cadastro-usuario">Faça seu cadastro</Link> </p>
                     </div>
+                    <div className="containerAcesso">
+                        <h1>nome do projeto</h1>
+                        <p>Bem-vindo de volta</p>
+
+
+                        <form>
+                            <div className="campo">
+                                <label htmlFor="emailLogin">Email</label>
+                                <input type="email" placeholder="digite seu email"
+                                    onChange={(e) => setUsuarioLogin({ ...usuarioLogin, email: e.target.value })}
+                                />
+
+                            </div>
+
+                            <div className="campo">
+                                <label htmlFor="senhaLogin">Senha</label>
+                                <input type="password" placeholder="digite sua senha"
+                                    onChange={(e) => setUsuarioLogin({ ...usuarioLogin, senha: e.target.value })}
+                                />
+                            </div>
+
+                            {usuarioLogin.msgErro == true && <p>Usuário ou senha inválidos</p>}
+
+                            <button type='button' onClick={() => realizarLogin(usuarioLogin)}> Entrar </button>
+                        </form>
+
+
+                        <div>
+                            <p> É novo por aqui? <Link to="/cadastro-usuario">Faça seu cadastro</Link> </p>
+                        </div>
 
 
 
+                    </div>
                 </div>
             </div>
         </>

@@ -1,0 +1,36 @@
+.containerLogin {
+    background-image: url(../../assets/skate.jpg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.conteudoLogin {
+    border: 1.5px solid var(--azul);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    width: calc((100vh - 2*40px) * 1.7778);
+    height: calc(100vh - 2*40px);
+    display: flex;
+
+}
+
+
+.containerRetangulo {
+    flex: 1;
+}
+
+.containerAcesso {
+    background-color: var(--azul);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    border-radius: 0 20px 20px 0;
+    width: 25em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

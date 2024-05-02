@@ -9,15 +9,12 @@
     font-family: inter;
 } */
 
-/* :root{
-    --nemTaoPreto:#0D1A26;
-    --cinzaEscuro:#5C6670;
-    --cinzaMedio:#AEB3B7;
-    --cinzaClaro:#EFF0F0;
-    --verdeEscuro:#504908;
-    --verdeClaro:#D6E2D3;
-    --vermelhoErro:#DA4E4E;
-} */
+:root{
+    --azul:#D4E5F5;
+    --amarelo: #FFF7CD;
+    --cinza: #5A5766;
+    --magenta:#912F56;
+}
 
 a:link {
     color: inherit; /* Mantém a cor padrão do texto */
