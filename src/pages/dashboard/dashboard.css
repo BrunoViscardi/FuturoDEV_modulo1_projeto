@@ -8,23 +8,23 @@
 }
 
 .titutoDashboard {
-    margin: 70px;
-    margin-bottom: 0;
-    color: var(--escuro);
+    color: white;
+    width: fit-content;
 }
 
 .subtituloDashboard {
-    margin: 70px;
-    margin-top: 0;
-    width: 900px;
+    width: 800px;
     line-height: 24px;
     font-weight: 400;
     font-size: 20px;
+    color: var(--cinzaClaro);
+    text-align:center;
 }
 
 .tituloAtivos {
-    margin: 70px 70px 0;
+    margin: 140px 70px 0;
     font-size: 3.33em;
+    
 }
 
 
@@ -34,4 +34,23 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+
+.Retangulo{
+    background-image: url(../../assets/skate.jpg);
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 140px;
+}
+
+.Retangulo div{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

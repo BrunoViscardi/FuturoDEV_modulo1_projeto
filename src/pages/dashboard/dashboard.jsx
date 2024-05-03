@@ -15,8 +15,13 @@ function PaginaDashboard() {
     return (
         <>
 
-            <h1 className="titutoDashboard">Locais de atividades físicas</h1>
-            <p className="subtituloDashboard">Descubra os melhores locais para se exercitar em sua região! Cadastre e encontre facilmente academias, parques, pistas de corrida e muito mais. Transforme sua rotina de atividades físicas com apenas alguns cliques.</p>
+            <div className="Retangulo">
+                <div>
+                    <h1 className="titutoDashboard">OLYMPYAN</h1>
+                    <p className="subtituloDashboard">Descubra os melhores locais para se exercitar em sua região! Cadastre e encontre facilmente academias, parques, pistas de corrida e muito mais. Transforme sua rotina de atividades físicas com apenas alguns cliques.</p>
+                </div>
+            </div>
+
 
             <div className="cardDashboardContainer">
                 {Array.isArray(Exercicios) ? (

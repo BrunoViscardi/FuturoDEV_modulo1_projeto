@@ -1,10 +1,10 @@
 .card-Conteudo {
     display: flex;
     flex-direction: row;
-    box-shadow: 0px 4px 4px 0px #443A2E40;
+    box-shadow: #443A2E40 0px 2px 8px 0px;
     width: 485.4px;
     height: 400px;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 20px 0 20px;
 
 }
 
