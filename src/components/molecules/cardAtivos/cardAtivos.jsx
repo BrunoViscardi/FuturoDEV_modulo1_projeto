@@ -5,13 +5,10 @@ function CardAtivos({ usuarios }) {
 
 
     return (
-        <div className="card-Conteudo">
+        <div className="cardAtivos">
 
-            <div>
-                0
-            </div>
-
-            <span>{usuarios.nome}</span>
+            <span className="profile">ou</span>             
+            <span className="profileNome">{usuarios.nome}</span>
 
         </div>
     )

@@ -1,7 +1,5 @@
-
-
-.cardDashboardContainer{
-    margin:70px;
+.cardDashboardContainer {
+    margin: 70px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -9,17 +7,31 @@
     gap: 60px;
 }
 
-.titutoDashboard{
-    margin:70px;
+.titutoDashboard {
+    margin: 70px;
     margin-bottom: 0;
     color: var(--escuro);
 }
 
-.subtituloDashboard{
-    margin:70px;
+.subtituloDashboard {
+    margin: 70px;
     margin-top: 0;
     width: 900px;
     line-height: 24px;
     font-weight: 400;
     font-size: 20px;
+}
+
+.tituloAtivos {
+    margin: 70px 70px 0;
+    font-size: 3.33em;
+}
+
+
+.cardDashboardUsuariosAtivos {
+    background-color: var(--cinzaClaro);
+    padding: 35px 70px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }

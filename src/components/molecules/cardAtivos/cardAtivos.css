@@ -1,0 +1,28 @@
+.cardAtivos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile{
+    background-image: url("../../../assets/profile.svg");
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    color: transparent;
+}
+
+.profileNome{
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 12px;
+    width: fit-content;
+    padding: 5px 15px;
+    line-height: 24px;
+    border-radius: 32px;
+    background-color: var(--cinzaMedio);
+}

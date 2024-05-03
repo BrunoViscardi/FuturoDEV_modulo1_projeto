@@ -28,15 +28,16 @@ function PaginaDashboard() {
 
 
 
+            <h1 className="tituloAtivos">Usuários ativos: {usuariosAtivos.length}</h1>
 
+            <div className="cardDashboardUsuariosAtivos">
+                {Array.isArray(usuariosAtivos) ? (
+                    usuariosAtivos.map((usuariosAtivos, index) => (
+                        <CardAtivos usuarios={usuariosAtivos} key={index} />))
+                ) : (<span> Não há dados disponíveis</span>)
+                }
+            </div>
 
-            <h1>Usuários ativos: {usuariosAtivos.length}</h1>
-
-            {Array.isArray(usuariosAtivos) ? (
-                usuariosAtivos.map((usuariosAtivos, index) => (
-                    <CardAtivos usuarios={usuariosAtivos} key={index} />))
-            ) : (<span> Não há dados disponíveis</span>)
-            }
 
 
         </>
