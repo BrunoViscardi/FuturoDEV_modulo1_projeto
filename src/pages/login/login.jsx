@@ -74,7 +74,7 @@ function PaginaLogin() {
                             <p>!Bem-vindo de volta</p>
 
 
-                            <form>
+                            <form className="formLogin">
                                 <div className="campoLogin">
                                     <label htmlFor="emailLogin">Email</label>
                                     <input type="email" placeholder="digite seu email"

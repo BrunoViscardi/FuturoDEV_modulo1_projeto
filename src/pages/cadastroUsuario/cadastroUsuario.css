@@ -1,0 +1,84 @@
+body.specific-page {
+    background-color: var(--cinzaClaro);
+    display: flex;
+    justify-content: center;
+}
+
+
+.usuarioContainer {
+    margin: 200px;
+    width: 592px;
+}
+
+.usuarioContainer h1 {
+    color: var(--escuro);
+}
+
+.formUsuario input {
+    border: 1px solid var(--medio);
+}
+
+.inputSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--medio);
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+}
+
+
+
+.formUsuario input::placeholder {
+    color: var(--claro);
+}
+
+
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campoColuna {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.campoColuna>.campo {
+    width: calc(50% - 20px/2);
+}
+
+.campo p {
+    color: var(--medio);
+    font-size: 10.667px;
+    padding-left: 16px;
+}
+
+.campo p::before {
+    content: "* ";
+}
+
+
+.endereço{
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--medio);
+    border-radius: 4px;
+}
+
+.endereço .campo{
+    margin-top: 20px;
+}
+
+
+.formAcoes {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
