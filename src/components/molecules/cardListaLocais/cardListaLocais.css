@@ -1,18 +1,21 @@
 .card-Conteudo {
     display: flex;
     flex-direction: row;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #443A2E40;
     width: 485.4px;
-    height: 300px;
+    height: 400px;
+    border-radius: 0 20px 20px 0;
+
 }
 
 
 .CardArea {
     padding: 32px;
-    gap: 24px;
+    /* gap: 24px; */
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .titulo{
@@ -20,21 +23,51 @@
     font-size: 20px;
 }
 
-.divider{
-    width: 40px;
-    border-top: solid 1px var(--cinzaMedio);
-}
 
 .tipo{
     font-weight: 700;
     font-size: 16px;
-    text-align: right;
+    font-size: 12px;
+    width: fit-content;
+    padding: 5px 15px;
+    line-height: 24px;
+    border-radius: 32px;
+    background-color: var(--cinzaClaro);
+    margin-left: auto
 }
 
 .descricao{
     font-weight: 700;
     font-size: 12px;
 
+}
+
+
+.LogoCard {
+    height: 10px;
+    background-image: url(../../../assets/laurelEscuro.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.divider {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.hr-left-card,
+.hr-right-card {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--cinzaClaro);
+}
+
+.hr-text-card {
+    padding: 0 10px;
+    color: transparent;
 }
 
 .features{
