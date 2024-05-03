@@ -32,7 +32,8 @@
     padding: 5px 15px;
     line-height: 24px;
     border-radius: 32px;
-    background-color: var(--cinzaClaro);
+    background-color: var(--claro);
+    color: var(--escuro);
     margin-left: auto
 }
 
@@ -79,6 +80,6 @@
 }
 
 .features span{
-    color: gray;
+    color: var(--cinzaMedio);
 }
 

@@ -1,0 +1,42 @@
+.cardEditarLocais{
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: #443A2E40 0px 2px 8px 0px;
+    border-radius: 0 20px 0 20px;
+    padding: 40px;
+}
+
+.CardAreaEditar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+
+}
+
+.cardAcoesEditar{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.tipoEditar{
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 12px;
+    width: fit-content;
+    padding: 5px 15px;
+    line-height: 24px;
+    border-radius: 32px;
+    background-color: var(--cinzaClaro);
+}
+
+.coordenadasEditar{
+    color: var(--cinzaMedio);
+}
+

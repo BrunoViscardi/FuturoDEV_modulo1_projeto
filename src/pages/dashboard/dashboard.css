@@ -8,7 +8,7 @@
 }
 
 .titutoDashboard {
-    color: white;
+    color: var(--claro);
     width: fit-content;
 }
 

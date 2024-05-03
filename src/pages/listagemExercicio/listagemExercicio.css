@@ -1,0 +1,13 @@
+.EditarLocaisContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    margin: 140px;
+}
+
+.tituloEditarLocais{
+    font-size: 3.33em;
+    color: var(--escuro);
+}
