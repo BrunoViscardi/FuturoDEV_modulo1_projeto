@@ -1,0 +1,22 @@
+.footerContainer{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 70px 0 70px;
+
+    font-weight: 700;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--escuro);
+}
+
+.footerContainer div{
+    display: flex;
+    align-items: center; 
+    line-height: normal;
+    gap: 20px;
+}
