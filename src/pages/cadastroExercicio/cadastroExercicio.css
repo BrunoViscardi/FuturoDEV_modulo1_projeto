@@ -1,0 +1,9 @@
+.specific-page-header{
+    background-color: var(--cinzaClaro);
+}
+
+.cadastroExercicioContainer{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
