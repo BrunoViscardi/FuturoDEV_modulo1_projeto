@@ -19,7 +19,7 @@ function PaginaLogin() {
     const [usuarioLogin, setUsuarioLogin] = useState({
         email: "",
         senha: "",
-        msgErro: false
+        msgErro: ""
     })
 
 
@@ -29,23 +29,20 @@ function PaginaLogin() {
         const email = usuarioLogin.email;
         const senha = usuarioLogin.senha;
 
+        const usuario = usuarios.find(user => user.email == email && user.senha == senha);
 
+        if (usuario) {
+            localStorage.setItem("isAutenticado", true)
+            window.location.href = "/" + usuario.id
+            setUsuarioLogin({ ...usuarioLogin, msgErro: "false" })
+            cadastrarUsuarioAtivo({ idUser: usuario.id, nome: usuario.nome })
 
-        usuarios.map(user => {
-
-            if (user.email == email && user.senha == senha) {
-                localStorage.setItem("isAutenticado", true)
-                window.location.href = "/" + user.id
-
-                cadastrarUsuarioAtivo({ idUser: user.id, nome: user.nome })
-
-
-            } else {
-                setUsuarioLogin({ ...usuarioLogin, msgErro: true })
-            }
-        })
-
+        } else {
+            setUsuarioLogin({ ...usuarioLogin, msgErro: "true" })
+        }
     }
+
+
 
 
 
@@ -90,12 +87,12 @@ function PaginaLogin() {
                                     />
                                 </div>
 
-                                {usuarioLogin.msgErro == true && <div className="erroLogin">Usuário ou senha inválidos</div>}
+                                {usuarioLogin.msgErro == "true" && <div className="erroLogin">Usuário ou senha inválidos</div>}
 
 
                                 <Cbutton type='button' estilo="Contained" onClick={() => realizarLogin(usuarioLogin)}> Entrar</Cbutton>
 
-                                
+
                             </form>
 
                             <div className="hr-container">
@@ -105,7 +102,7 @@ function PaginaLogin() {
                             </div>
 
                             <Link to="/cadastro-usuario">
-                            <Cbutton type='button' estilo="OutlinedLogin" onClick={() => realizarLogin(usuarioLogin)}> Cadastrar-se</Cbutton>
+                                <Cbutton type='button' estilo="OutlinedLogin" onClick={() => realizarLogin(usuarioLogin)}> Cadastrar-se</Cbutton>
                             </Link>
 
 
