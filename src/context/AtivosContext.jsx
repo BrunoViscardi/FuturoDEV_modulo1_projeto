@@ -71,7 +71,7 @@ export const AtivosContextProvider = ({ children }) => {
             localStorage.removeItem("isAutenticado")
         }
 
-        window.location.href = "/login"
+        window.location.href = "/"
 
     }
 

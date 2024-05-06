@@ -250,7 +250,7 @@ function PaginaCadastroUsuario() {
 
                 <div className="formAcoes">
                 <Cbutton type='submit' estilo="Contained"> Cadastrar</Cbutton>
-                <Cbutton type='button' estilo="Outlined" onClick={() => window.location.href = "/login"}>Voltar</Cbutton>
+                <Cbutton type='button' estilo="Outlined" onClick={() => window.location.href = "/"}>Voltar</Cbutton>
                 </div>
 
                 

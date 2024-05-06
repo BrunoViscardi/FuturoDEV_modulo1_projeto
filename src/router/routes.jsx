@@ -12,7 +12,7 @@ import PaginaEditarExercicio from "../pages/editarExercicio/editarExercio";
 
 let isAutenticado = JSON.parse(localStorage.getItem("isAutenticado")) || false
 const PrivateRoute = ({ children }) => {
-    return isAutenticado ? [children] : <Navigate to="/login" />
+    return isAutenticado ? [children] : <Navigate to="/" />
 }
 
 
@@ -21,7 +21,7 @@ const PrivateRoute = ({ children }) => {
 
 const routes = createBrowserRouter([
     {
-        path: "/login",
+        path: "/",
         element: <PaginaLogin />
     },
     {
