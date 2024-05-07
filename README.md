@@ -15,7 +15,11 @@ OLYMPYAN project é um *software* que facilita a integração e compartilhamento
 
 <div align="center"><div/>
 
-https://github.com/BrunoViscardi/FuturoDEV_modulo1_projeto/assets/139285339/396bebcf-b251-4672-a27f-d4678997ccb9
+
+
+https://github.com/BrunoViscardi/FuturoDEV_modulo1_projeto/assets/139285339/bb9763f3-1f8a-45f2-a9ee-d02bed6fd251
+
+
 
 <div align="left"><div/>
 
