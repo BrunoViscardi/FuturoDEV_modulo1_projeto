@@ -7,6 +7,7 @@ OLYMPYAN project é um *software* que facilita a integração e compartilhamento
 
  - Cadastro de novo usuário
  - Visualização de locais de atividades físicas cadastrados
+ - Visualização de usuários ativos
  - Cadastro de novo local de atividades
  - Editar e apagar local de atividades
  
@@ -91,6 +92,7 @@ npx json-server ./data/db.json
 
 ## 💊 Sugestão de melhorias 
 
- - Ao usuário que não tenha mais seus dados em permanência no LocalStorage (isAutenticado" - true) por motivos adversos ou exclusão forçada, eliminá-lo da lista de usuários ativos.
+ - Ao usuário que não tenha mais seus dados em permanência no LocalStorage (isAutenticado" - true) por motivos adversos ou exclusão forçada, eliminá-lo da lista de usuários ativos;
+ - Exclusão de locais permitido somente ao usuaário que o cadastrou;
  - Implementar responsividade para diferentes tipos de tela;
  - Implementar uso de mapas interativos no lugar da lista de locais de exercícios com base na latitude e longitude fornecido pelo usuário. Sugestão: uso da biblioteca React Leaflet.
