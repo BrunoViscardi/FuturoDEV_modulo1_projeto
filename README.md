@@ -1,7 +1,7 @@
 <h1 align="center"> OLYMPYAN project </h1>
 
 
-OLYMPYAN project é um *software* que facilita a integração e compartilhamento de locais destinados a atividades físicas. Os usuários da plataforma podem acessar uma lista de locais cadastrados e também contribuir compartilhando novos espaços.
+OLYMPYAN project é uma plataforma que facilita a integração, compartilhamento e gerenciamento de locais destinados a atividades físicas. Os usuários da plataforma podem encontrar pontos de atividades próximos em uma lista de locais cadastrados, visualizar informações sobre os exercícios e registrar suas próprias contribuições para o sistema.
 
 ## ✅ Funcionalidades
 
